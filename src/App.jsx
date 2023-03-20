@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
 import Contact from "./components/Contact";
+import Test from "./components/test";
 
 const Container = styled.div`
   height: 100vh;
@@ -12,7 +13,7 @@ const Container = styled.div`
   scrollbar-width: none;
   color: white;
   background: linear-gradient(to right, #3b1cb5, #0e0101);
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     display: none;
   }
 `;
@@ -24,6 +25,7 @@ function App() {
       <Who />
       <Works />
       <Contact />
+      <Test />
     </Container>
   );
 }

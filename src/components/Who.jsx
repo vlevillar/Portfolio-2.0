@@ -70,7 +70,7 @@ const Who = () => {
           {/* 3D model */}
         </Left>
         <Right>
-        <Title>Think outside the square space</Title>
+        <Title>Think outside the squre space</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle>Who we are</Subtitle>

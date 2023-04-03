@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { OrbitControls, Stage } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import Brain from "./Brain";
 import React from "react";
 
 const Section = styled.div`
@@ -62,21 +65,47 @@ const Right = styled.div`
   gap: 20px;
 `;
 
+const ImgContainer = styled.div `
+  display: flex;
+`;
+
+const Img = styled.img`
+  width: 8%;
+  padding-right: 20px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+`;
+
 const Who = () => {
   return (
-    <Section>
+    <Section id='studio'>
       <Container>
         <Left>
-          {/* 3D model */}
+          <Canvas>
+            <Stage environment="city" intensity={0.6} castShadow={false}>
+              <Brain />
+            </Stage>
+            <OrbitControls enableZoom={false} autoRotate />
+          </Canvas>
         </Left>
         <Right>
-        <Title>Think outside the squre space</Title>
+          <Title>Think outside the squre space</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle>Who we are</Subtitle>
           </WhatWeDo>
           <Desc>I enjoy creating</Desc>
           <Button>See my works!</Button>
+          <ImgContainer>
+          <Img src="./img/javaScript.png"/>
+          <Img src="./img/typeScript.png"/>
+          <Img src="./img/html.png"/>
+          <Img src="./img/css.png"/>
+          <Img src="./img/react.png"/>
+          <Img src="./img/redux.png"/>
+          <Img src="./img/SQL.png"/>
+          <Img src="./img/nodeJs.png"/>
+          </ImgContainer>
         </Right>
       </Container>
     </Section>

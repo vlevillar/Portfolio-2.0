@@ -24,15 +24,15 @@ const Logo = styled.img`
     height: 120px;
 `;
 
-const List = styled.ul`
-    display: flex;
-    gap: 20px;
-    list-style: none;
-`;
 
-const ListItem = styled.li`
+const ListItem = styled.a`
+    display: flex;
+    color: white;
+    gap: 20px;
+    text-decoration: none;
     cursor: pointer;
 `;
+
 
 const Icons = styled.div`
     display: flex;
@@ -60,15 +60,12 @@ const Navbar = () => {
       <Container>
         <Links>
         <Logo src="./img/logo.png"/>
-        <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
-        </List>
+            <ListItem href='#home'>Home</ListItem>
+            <ListItem href='#studio'>Studio</ListItem>
+            <ListItem href='#works'>Works</ListItem>
+            <ListItem href='#contact'>Contact</ListItem>
         </Links>
         <Icons>
-            <Icon src="./img/searchButton.png"/>
             <Button>Hire Now</Button>
         </Icons>
       </Container>

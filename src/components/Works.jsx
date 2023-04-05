@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import WebDesign from "./WebDesign";
+import Development from "./Development";
+import Adaptability from "./Adaptability";
+import Illustration from "./Illustration";
+import Communication from "./Communication";
 
 const data = [
   "Web Design",
@@ -44,7 +49,7 @@ const ListItem = styled.li`
   -webkit-text-stroke: 1px white;
   position: relative;
 
-  ::after{
+  ::after {
     content: "${(props) => props.text}";
     position: absolute;
     top: 0;
@@ -55,12 +60,12 @@ const ListItem = styled.li`
     white-space: nowrap;
   }
 
-  &:hover{
-    ::after{
+  &:hover {
+    ::after {
       animation: moveText 0.5s linear both;
 
       @keyframes moveText {
-        to{
+        to {
           width: 100%;
         }
       }
@@ -73,18 +78,35 @@ const Right = styled.div`
 `;
 
 const Works = () => {
-  return <Section>
-    <Container>
-      <Left>
-        <List>
-          {data.map((item) => (
-            <ListItem key={item} text={item}>{item}</ListItem>
-          ))}
-        </List>
-      </Left>
-      <Right></Right>
-    </Container>
-  </Section>
+  const [work, setWork] = useState("Web Design");
+  return (
+    <Section id='works'>
+      <Container>
+        <Left>
+          <List>
+            {data.map((item) => (
+              <ListItem key={item} text={item} onClick={() => setWork(item)}>
+                {item}
+              </ListItem>
+            ))}
+          </List>
+        </Left>
+        <Right>
+          {work === "Web Design" ? (
+            <WebDesign />
+          ) : work === "Development" ? (
+            <Development />
+          ) : work === "Adaptability" ? (
+            <Adaptability />
+          ) : work === "Illustration" ? (
+            <Illustration />
+          ) : (
+            <Communication />
+          )}
+        </Right>
+      </Container>
+    </Section>
+  );
 };
 
 export default Works;
